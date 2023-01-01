@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+  --main-color: #ba5d2c;
+  --card-title-color: #617d98;
+  --product-price-color: #324d67;
+  --section-title-color: #102a42;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

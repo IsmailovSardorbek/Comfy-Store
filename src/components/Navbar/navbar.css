@@ -1,0 +1,150 @@
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+  transition: all 0.2s;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  z-index: 9999;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 19px;
+}
+
+.shopping-cart-btn {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 25px;
+  position: relative;
+  cursor: pointer;
+}
+
+.items-counter {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: var(--main-color);
+  color: #fff;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-btn {
+  background: var(--main-color);
+  color: #fff;
+  font-size: 20px;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  display: none;
+}
+
+.site-logo {
+  position: fixed;
+  width: 100%;
+  left: 45%;
+}
+
+.close {
+  background: transparent;
+  border: 0;
+  font-weight: 600;
+  outline: 0;
+  color: #617d98;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.page-icon {
+  margin-right: 1rem;
+}
+
+.page-icon:last-child {
+  margin-right: 2rem !important;
+}
+
+.sticky {
+  background: #000;
+}
+
+@media (width <= 700px) {
+  .burger-btn {
+    display: block;
+  }
+
+  .site-logo {
+    left: 38%;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    z-index: 11111;
+    display: none;
+    transition: 0.2s;
+  }
+
+  .page-name {
+    color: #102a42;
+  }
+
+  .nav-menu {
+    height: 100%;
+    background: #fff;
+    z-index: 9999 !important;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    padding: 4rem;
+  }
+
+  .nav-link {
+    color: #617d98;
+  }
+
+  .close {
+    position: absolute;
+    top: 3%;
+    right: 7%;
+  }
+
+  .menu.show {
+    display: block;
+  }
+}
