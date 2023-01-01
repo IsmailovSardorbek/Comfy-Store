@@ -62,5 +62,5 @@
 }
 
 .card-buttons button:hover {
-  background: #da8252;
+  background: var(--button-hover-color);
 }

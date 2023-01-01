@@ -1,7 +1,9 @@
 import './navbar.css'
 import { Link } from 'react-router-dom'
-import logo from '../../../public/images/logo.svg'
-import { useState } from 'react'
+import whiteLogo from '../../../public/images/logo.svg'
+import darkLogo from '../../../public/images/logo-black.svg'
+import { useContext, useState } from 'react'
+import Context from '../context/Context'
 
 export default function Navbar() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -18,6 +20,8 @@ export default function Navbar() {
     setScrollY(window.scrollY)
   })
 
+  const { location } = useContext(Context)
+
   return (
     <div className={`navbar ${scrollY > 50 ? 'sticky' : ''}`}>
       <div className="container">
@@ -28,7 +32,13 @@ export default function Navbar() {
           <div className={`menu ${showMenu ? 'show' : ''}`}>
             <ul className="nav-menu">
               <li className="nav-item">
-                <Link to="/" className="nav-link">
+                <Link
+                  to="/"
+                  className={`nav-link ${
+                    location === '/' ? '' : 'change-color'
+                  }`}
+                  onClick={() => setShowMenu(false)}
+                >
                   {windowWidth <= 700 && (
                     <i className="fa-solid fa-home page-icon"></i>
                   )}
@@ -36,7 +46,13 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/products" className="nav-link">
+                <Link
+                  onClick={() => setShowMenu(false)}
+                  to="/products"
+                  className={`nav-link ${
+                    location === '/' ? '' : 'change-color'
+                  }`}
+                >
                   {windowWidth <= 700 && (
                     <i className="fa-solid fa-couch page-icon"></i>
                   )}
@@ -44,7 +60,13 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">
+                <Link
+                  onClick={() => setShowMenu(false)}
+                  to="/about"
+                  className={`nav-link ${
+                    location === '/' ? '' : 'change-color'
+                  }`}
+                >
                   {windowWidth <= 700 && (
                     <i className="fa-solid fa-book page-icon"></i>
                   )}
@@ -60,10 +82,14 @@ export default function Navbar() {
           </div>
 
           <a className="site-logo" href="#">
-            <img src={logo} alt="" />
+            <img src={location === '/' ? whiteLogo : darkLogo} />
           </a>
 
-          <button className="shopping-cart-btn">
+          <button
+            className={`shopping-cart-btn ${
+              location === '/' ? '' : 'change-color'
+            }`}
+          >
             <i className="fa-solid fa-cart-plus"></i>
             <div className="items-counter">0</div>
           </button>

@@ -13,7 +13,7 @@
   position: absolute;
   inset: 0;
   width: 100%;
-  padding-top: 10rem;
+  padding-top: 11rem;
   height: 100%;
   padding-left: 3rem;
 }
@@ -46,7 +46,7 @@
 
 @media (width <= 700px) {
   .text-slanted {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .dark-overlay p {

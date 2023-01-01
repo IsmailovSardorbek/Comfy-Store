@@ -7,6 +7,7 @@
   --card-title-color: #617d98;
   --product-price-color: #324d67;
   --section-title-color: #102a42;
+  --button-hover-color: #da8252;
 }
 
 * {
@@ -23,4 +24,20 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.page-title {
+  margin-top: 6rem;
+  background: #f1f5f8;
+  padding: 2.7rem 0;
+  color: var(--card-title-color);
+}
+
+.page-title .container {
+  padding: 0 1rem;
+}
+
+.page-title h1 {
+  font-weight: 600;
+  font-size: 27px;
 }
