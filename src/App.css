@@ -46,9 +46,27 @@ img {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+}
+
 .products .cards-container {
   flex-grow: 1;
   margin: 3.5rem 1rem;
+}
+
+#product {
+  margin: 3.5rem 1rem;
+}
+
+.product-image img {
+  border-radius: 0.5rem;
+}
+
+.product-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 @media (width <= 800px) {

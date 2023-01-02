@@ -25,7 +25,7 @@ export default function Navbar({ pathname }: PathnameProps) {
 
   const classes = []
 
-  if (pathname === '/products' && scrollY > 20) classes.push('text-white')
+  if (pathname !== '/' && scrollY > 20) classes.push('text-white')
 
   return (
     <div className={`navbar ${scrollY > 20 ? 'sticky' : ''}`}>
@@ -40,7 +40,7 @@ export default function Navbar({ pathname }: PathnameProps) {
                 <Link
                   to="/"
                   className={`nav-link ${
-                    pathname === '/products' ? 'change-color' : 'text-white'
+                    pathname !== '/' ? 'change-color' : 'text-white'
                   } ${classes.join('')}`}
                   onClick={() => setShowMenu(false)}
                 >
@@ -55,7 +55,7 @@ export default function Navbar({ pathname }: PathnameProps) {
                   onClick={() => setShowMenu(false)}
                   to="/products"
                   className={`nav-link ${
-                    pathname === '/products' ? 'change-color' : 'text-white'
+                    pathname !== '/' ? 'change-color' : 'text-white'
                   } ${classes.join('')}`}
                 >
                   {windowWidth <= 700 && (
@@ -69,7 +69,7 @@ export default function Navbar({ pathname }: PathnameProps) {
                   onClick={() => setShowMenu(false)}
                   to="/about"
                   className={`nav-link ${
-                    pathname === '/products' ? 'change-color' : 'text-white'
+                    pathname !== '/' ? 'change-color' : 'text-white'
                   } ${classes.join('')}`}
                 >
                   {windowWidth <= 700 && (

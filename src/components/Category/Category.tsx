@@ -3,7 +3,7 @@ import './category.css'
 type CategoryProps = {
   category: string
   index: number
-  filterByCategory: (category:string) => void
+  filterByCategory: (category: string) => void
 }
 
 export default function Category({
