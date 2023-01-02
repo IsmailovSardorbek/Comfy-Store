@@ -2,7 +2,6 @@ import { Fragment } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home'
-import Context from './context/Context'
 import Products from './pages/Products'
 import './App.css'
 
