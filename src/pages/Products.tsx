@@ -7,9 +7,14 @@ import items from '../data/items.json'
 export default function Products() {
   const [filteredItems, setFilteredItems] = useState(items)
 
-  console.log(filteredItems)
-
   const [rangeValue, setRangeValue] = useState('80')
+
+  function filterByCategory(category: string) {
+    if (category === 'All') setFilteredItems(items)
+    else {
+      setFilteredItems(items.filter((item) => item.category === category))
+    }
+  }
 
   return (
     <>
@@ -26,6 +31,7 @@ export default function Products() {
               rangeValue={rangeValue}
               setRangeValue={setRangeValue}
               setFilteredItems={setFilteredItems}
+              filterByCategory={filterByCategory}
             />
             <div className="cards-container">
               {filteredItems.length ? (

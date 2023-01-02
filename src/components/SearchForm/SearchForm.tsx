@@ -8,12 +8,14 @@ type RangeValueProps = {
   rangeValue: number | string
   setRangeValue: (n: any) => void
   setFilteredItems: (array: any) => void
+  filterByCategory: (category:string) => void
 }
 
 export default function SearchForm({
   rangeValue,
   setRangeValue,
   setFilteredItems,
+  filterByCategory,
 }: RangeValueProps) {
   const textInputRef = useRef(null)
 
@@ -24,6 +26,14 @@ export default function SearchForm({
     )
   }
 
+  function filterByName(e: React.ChangeEvent<HTMLInputElement>) {
+    setFilteredItems(
+      items.filter((item) =>
+        item.title.toLowerCase().includes(e.target.value.toLowerCase())
+      )
+    )
+  }
+
   return (
     <div className="search-form">
       <input
@@ -31,10 +41,14 @@ export default function SearchForm({
         type="text"
         placeholder="Search..."
         className="search-input"
+        onChange={filterByName}
       />
       <div className="categories">
         <h4 className="categories-title">Company</h4>
-        <CategoriesList categories={categories} />
+        <CategoriesList
+          categories={categories}
+          filterByCategory={filterByCategory}
+        />
       </div>
       <div className="price">
         <h4 className="price-title">Price</h4>
