@@ -38,6 +38,10 @@
   color: var(--main-color);
 }
 
+.text-white {
+  color: #fff !important;
+}
+
 .shopping-cart-btn {
   background: transparent;
   border: 0;
@@ -115,7 +119,7 @@
   }
 
   .site-logo {
-    left: 38%;
+    left: 35%;
   }
   .menu {
     position: fixed;

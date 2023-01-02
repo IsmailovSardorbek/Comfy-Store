@@ -23,6 +23,10 @@ export default function Navbar({ pathname }: PathnameProps) {
     setScrollY(window.scrollY)
   })
 
+  const classes = []
+
+  if (pathname === '/products' && scrollY > 20) classes.push('text-white')
+
   return (
     <div className={`navbar ${scrollY > 20 ? 'sticky' : ''}`}>
       <div className="container">
@@ -36,8 +40,8 @@ export default function Navbar({ pathname }: PathnameProps) {
                 <Link
                   to="/"
                   className={`nav-link ${
-                    pathname === '/' ? '' : 'change-color'
-                  }`}
+                    pathname === '/products' ? 'change-color' : 'text-white'
+                  } ${classes.join('')}`}
                   onClick={() => setShowMenu(false)}
                 >
                   {windowWidth <= 700 && (
@@ -51,8 +55,8 @@ export default function Navbar({ pathname }: PathnameProps) {
                   onClick={() => setShowMenu(false)}
                   to="/products"
                   className={`nav-link ${
-                    pathname === '/' ? '' : 'change-color'
-                  }`}
+                    pathname === '/products' ? 'change-color' : 'text-white'
+                  } ${classes.join('')}`}
                 >
                   {windowWidth <= 700 && (
                     <i className="fa-solid fa-couch page-icon"></i>
@@ -65,8 +69,8 @@ export default function Navbar({ pathname }: PathnameProps) {
                   onClick={() => setShowMenu(false)}
                   to="/about"
                   className={`nav-link ${
-                    pathname === '/' ? '' : 'change-color'
-                  }`}
+                    pathname === '/products' ? 'change-color' : 'text-white'
+                  } ${classes.join('')}`}
                 >
                   {windowWidth <= 700 && (
                     <i className="fa-solid fa-book page-icon"></i>
@@ -91,7 +95,7 @@ export default function Navbar({ pathname }: PathnameProps) {
           <button
             className={`shopping-cart-btn ${
               pathname === '/' ? '' : 'change-color'
-            }`}
+            } ${classes.join('')}`}
           >
             <i className="fa-solid fa-cart-plus"></i>
             <div className="items-counter">0</div>
