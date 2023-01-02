@@ -3,7 +3,7 @@ import items from '../../data/items.json'
 import Card from '../Card/Card'
 import { Link } from 'react-router-dom'
 
-export default function CardstList() {
+export default function CardsList() {
   return (
     <div className="cards">
       <div className="container">

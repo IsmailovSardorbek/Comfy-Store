@@ -2,10 +2,13 @@ import './navbar.css'
 import { Link } from 'react-router-dom'
 import whiteLogo from '../../../public/images/logo.svg'
 import darkLogo from '../../../public/images/logo-black.svg'
-import { useContext, useState } from 'react'
-import Context from '../context/Context'
+import { useState } from 'react'
 
-export default function Navbar() {
+type PathnameProps = {
+  pathname: string
+}
+
+export default function Navbar({ pathname }: PathnameProps) {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
   const [showMenu, setShowMenu] = useState(false)
@@ -20,10 +23,8 @@ export default function Navbar() {
     setScrollY(window.scrollY)
   })
 
-  const { location } = useContext(Context)
-
   return (
-    <div className={`navbar ${scrollY > 50 ? 'sticky' : ''}`}>
+    <div className={`navbar ${scrollY > 20 ? 'sticky' : ''}`}>
       <div className="container">
         <div className="nav-wrapper">
           <button className="burger-btn" onClick={() => setShowMenu(true)}>
@@ -35,7 +36,7 @@ export default function Navbar() {
                 <Link
                   to="/"
                   className={`nav-link ${
-                    location === '/' ? '' : 'change-color'
+                    pathname === '/' ? '' : 'change-color'
                   }`}
                   onClick={() => setShowMenu(false)}
                 >
@@ -50,7 +51,7 @@ export default function Navbar() {
                   onClick={() => setShowMenu(false)}
                   to="/products"
                   className={`nav-link ${
-                    location === '/' ? '' : 'change-color'
+                    pathname === '/' ? '' : 'change-color'
                   }`}
                 >
                   {windowWidth <= 700 && (
@@ -64,7 +65,7 @@ export default function Navbar() {
                   onClick={() => setShowMenu(false)}
                   to="/about"
                   className={`nav-link ${
-                    location === '/' ? '' : 'change-color'
+                    pathname === '/' ? '' : 'change-color'
                   }`}
                 >
                   {windowWidth <= 700 && (
@@ -81,13 +82,15 @@ export default function Navbar() {
             )}
           </div>
 
-          <a className="site-logo" href="#">
-            <img src={location === '/' ? whiteLogo : darkLogo} />
-          </a>
+          <Link className="site-logo" to="/">
+            <img
+              src={pathname === '/' || scrollY > 10 ? whiteLogo : darkLogo}
+            />
+          </Link>
 
           <button
             className={`shopping-cart-btn ${
-              location === '/' ? '' : 'change-color'
+              pathname === '/' ? '' : 'change-color'
             }`}
           >
             <i className="fa-solid fa-cart-plus"></i>

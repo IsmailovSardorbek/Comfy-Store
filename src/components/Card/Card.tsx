@@ -22,7 +22,7 @@ export default function Card({ title, imgUrl, price }: CardProps) {
       </div>
       <div className="card-body">
         <h4 className="card-title">{title}</h4>
-        <h4 className="product-price">{price}</h4>
+        <h4 className="product-price">$ {price}</h4>
       </div>
     </div>
   )

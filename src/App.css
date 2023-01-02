@@ -41,3 +41,18 @@ img {
   font-weight: 600;
   font-size: 27px;
 }
+
+.products-container {
+  display: flex;
+}
+
+.products .cards-container {
+  flex-grow: 1;
+  margin: 3.5rem 1rem;
+}
+
+@media (width <= 800px) {
+  .products-container {
+    flex-direction: column;
+  }
+}

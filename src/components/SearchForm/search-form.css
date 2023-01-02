@@ -1,0 +1,28 @@
+.search-form {
+  margin: 3.5rem 1rem;
+}
+
+.categories {
+  margin-top: 1rem;
+}
+
+.categories-title {
+  font-weight: 600;
+}
+
+.search-input {
+  border: 0;
+  outline: 0;
+  background: #f1f5f8;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
+}
+
+.search-input::placeholder {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.price-title {
+  font-weight: 600;
+}
