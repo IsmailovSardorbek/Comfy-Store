@@ -1,11 +1,12 @@
 import items from '../data/items.json'
 
 type ProductProps = {
-  id: string
+  id: string | number
 }
+// cdwadadadawd
 
 export default function Product({ id }: ProductProps) {
-  const product = items.find((item) => item.id === id)
+  const product = items.find((item) => item.id == id)
 
   return (
     <>
